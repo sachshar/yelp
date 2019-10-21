@@ -1,0 +1,30 @@
+{
+  "name": "icecreamshops",
+  "version": "1.0.0",
+  "description": "Top five ice cream shops in Alpharetta are and why",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://sachshar@github.com/sachshar/yelp.git"
+  },
+  "keywords": [
+    "ice",
+    "cream",
+    "shops",
+    "Alpharetta"
+  ],
+  "author": "sachinsharma_aim@yahoo.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sachshar/yelp/issues"
+  },
+  "homepage": "https://github.com/sachshar/yelp#readme",
+  "dependencies": {
+    "http-status-codes": "^1.3.2",
+    "yelp-fusion": "^3.0.0"
+  }
+}
