@@ -6,7 +6,5 @@ git clone https://github.com/sachshar/yelp.git
 cd yelp
 
 npm install
-
-cd ..
 # run
 npm start
