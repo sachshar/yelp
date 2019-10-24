@@ -18,7 +18,7 @@ const validateReview = (response) => {
 
 const processReview = (reviews) => {
 	return new Promise((resolve, reject) => {
-		resolve(reviews[0].text);
+		resolve(reviews[0]);
 	});
 }
 
@@ -52,7 +52,8 @@ const processSearch = (shops) => {
 
 		await Promise.all(shops.map(async (shop) => {
 			const review = await fetchReview(shop.alias);
-			reviews[shop.id] = review.split("\n").join();
+			reviews[shop.id] = review;
+			reviews[shop.id].text = reviews[shop.id].text.split("\n").join();
 		}));
 
 		resolve({"shops": shops, "reviews": reviews});
@@ -64,7 +65,8 @@ const displayShops = (results) => {
 		console.log("Following are the Top 5 Ice Cream Shops in Alpharetta \n");
 
 		results.shops.forEach((shop) => {
-			console.log(shop.name + "\nReview - ( " + results.reviews[shop.id] + " )\n");
+			console.log(shop.name + " ( " + shop.location.address1 + ", " + shop.location.city + " )");
+			console.log("Top Review - ( " + results.reviews[shop.id].text + " ), by (" + results.reviews[shop.id].user.name + ")\n");
 		});
 	});
 }
